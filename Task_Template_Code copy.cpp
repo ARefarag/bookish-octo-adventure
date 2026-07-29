@@ -12,12 +12,15 @@ public:
 
     // TODO: Complete constructor
     Product(int i, string n, double p, int s) {
-        // Your code here
+        id = i;
+        name = n;
+        price = p;
+        stock = s;
     }
 
     // TODO: Complete display method
     void display() {
-        // Your code here
+        cout << "ID: " << id << " | " << name << "Price: $" << price << " | " << "Stock: " << stock << endl;  
     }
 };
 
@@ -28,7 +31,8 @@ public:
 
     // TODO: Complete constructor
     OrderItem(int pid, int qty) {
-        // Your code here
+        productId = pid;
+        quantity = qty;
     }
 };
 
@@ -41,12 +45,14 @@ public:
 
     // TODO: Complete constructor
     Customer(int i, string n, string e) {
-        // Your code here
+       id = i;
+       name = n;
+       email = e;
     }
 
     // TODO: Complete display method
     void display() {
-        // Your code here
+        cout << "Customer ID: " << id << " | " << "Name: " name << endl;
     }
 };
 
@@ -59,17 +65,22 @@ public:
 
     // TODO: Complete constructor
     Order(int i, int cid) {
-        // Your code here
+        id = i;
+        customerId = cid;
     }
 
     // TODO: Complete calculateTotal
     void calculateTotal(vector<Product>& products) {
-        // Your code here
+        total = 0;
+        for(int i = 0; i < products.size(); i++){
+            total += products[i].price;
+        }
     }
 
     // TODO: Complete display
     void display(vector<Product>& products) {
-        // Your code here
+        cout << "Order ID: " << id << " | " << "Customer: " << customerId << " | " << "Total: $" << total << endl;
+        
     }
 };
 
